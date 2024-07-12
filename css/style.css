@@ -1,0 +1,553 @@
+/* General styles */
+:root{
+    font-size: 16px;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; 
+}
+.title p{
+    position: relative;
+}
+.title p::before{
+    content: '';
+    width: 40px;
+    height: 5px;
+    background-color:#0078ff;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+/* nav */
+.nav-a,.nav-drop-link{
+    position: relative;
+    width:fit-content;
+    font-size: 18px;
+}
+.nav-a::before,.nav-drop-link::before{
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 1s;
+}
+ .nav-a:hover::before,.nav-drop-link:hover::before{
+    width: 80%;
+}
+li .active{
+    position: relative;
+}
+body:has(.home:target) .navbar .active::before,
+body:has(.about:target) .navbar .active::before,
+body:has(.services:target) .navbar .active::before,
+body:has(.about:target) .navbar .active::before,
+body:has(.blog:target) .navbar .active::before,
+body:has(.work:target) .navbar .active::before
+{
+    content: ' ';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 1s;
+}
+body:has(.home:target)  .nav-a .active:hover::before,
+body:has(.about:target)  .nav-a .active:hover::before,
+body:has(.services:target)  .nav-a .active:hover::before,
+body:has(.work:target)  .nav-a .active:hover::before,
+body:has(.blog:target)  .nav-a .active:hover::before,
+body:has(.contact:target)  .nav-a .active:hover::before
+{
+    width: 0;
+}
+
+.dropdown-menu li a:hover{
+    color:#0078ff;
+}
+.nav-item{
+    padding-inline: 10px;
+}
+ .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+ }
+/* home */
+#home{
+    min-height: 100vh;
+    background-image: url(../images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+h1{
+    font-size:calc(1vw + 3rem);
+    line-height: 108px;
+}
+.home-content p{
+    font-size: 44px;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 10px;  
+}
+#home .overlay{
+    background-color: rgba(0,0,0,.6);
+    height: 100%;
+}
+.home-content p::before{
+     
+        content: ' |';
+        animation-name: typing;
+        animation-duration: 15s;
+        animation-iteration-count: infinite;   
+}
+@keyframes typing{
+    0%{
+        content: ' F |';
+    }
+    1.2%{
+        content:'Fr |';
+    }
+    2.4%{
+        content:'Fre |';
+    }
+    3.6%{
+        content:'Free |';
+    }
+    4.8%{
+        content:'Freel |';
+    }
+    6%{
+        content:'Freela |';
+    }
+    7.2%{
+        content:'Freelan |';
+    }
+    8.4%{
+        content: 'Freelanc |';
+    }
+    9.6%{
+        content: ' Freelance |';
+    }
+    10.8%{
+        content: 'Freelancer |';
+    }
+    12%{
+        content: ' Freelancer |';
+    }
+    13.2%{
+        content:'Freelance |';
+    }
+    14.4%{
+        content:'Freelanc |';
+    }
+    15.6%{
+        content:'Freelan |';
+    }
+    16.8%{
+        content:'Freela |';
+    }
+    18%{
+        content:'Freel |';
+    }
+    19.2%{
+        content:'Free |';
+    }
+    20.4%{
+        content: 'Fre |';
+    }
+    21.6%{
+        content: ' Fr |';
+    }
+    22.8%{
+        content: 'F |';
+    }
+    24%{
+        content: ' P |';
+    }
+    25.2%{
+        content:'Ph |';
+    }
+    26.4%{
+        content:'Pho |';
+    }
+    27.6%{
+        content:'Phot |';
+    }
+    28.8%{
+        content:'Photo |';
+    }
+    30%{
+        content:'Photog |';
+    }
+    31.2%{
+        content:'Photogr |';
+    }
+    32.4%{
+        content: 'Photogra |';
+    }
+    33.6%{
+        content: ' Photograp |';
+    }
+    34.8%{
+        content: 'Photograph |';
+    }
+    36%{
+        content: 'Photographe |';
+    }
+    37.2%{
+        content: 'Photographer |';
+    }
+    38.4%{
+        content: ' Photographer |';
+    }
+    39.6%{
+        content:'Photographe |';
+    }
+    40.8%{
+        content:'Photograph |';
+    }
+    42%{
+        content:'Photograp |';
+    }
+    43.2%{
+        content:'Photogra |';
+    }
+    44.4%{
+        content:'Photogr |';
+    }
+    45.6%{
+        content:'Photog |';
+    }
+    46.8%{
+        content: 'Photo |';
+    }
+    48%{
+        content: ' Phot |';
+    }
+    49.2%{
+        content: 'Pho |';
+    }
+    50.4%{
+        content: 'Ph |';
+    }
+    51.6%{
+        content: 'P |';
+    }
+    53%{
+        content: ' D |';
+    }
+    55.8%{
+        content:'De |';
+    }
+    57.2%{
+        content:'Des |';
+    }
+    58.6%{
+        content:'Desi |';
+    }
+    60%{
+        content:'Desig |';
+    }
+    61.4%{
+        content:'Design |';
+    }
+    62.8%{
+        content:'Designe |';
+    }
+    64.2%{
+        content: 'Designer |';
+    }
+    65.6%{
+        content: 'Designe |';
+    }
+    67%{
+        content: 'Design |';
+    }
+    68.4%{
+        content: 'Desig |';
+    }
+    69.8%{
+        content: 'Desi |';
+    }
+    71.2%{
+        content: 'Des |';
+    }
+    72.6%{
+        content: 'De |';
+    }
+    74%{
+        content: 'D |';
+    }
+    75.4%{
+        content: 'D |';
+    }
+    76.8%{
+        content:'De |';
+    }
+    78.2%{
+        content:'Dev |';
+    }
+    79.6%{
+        content:'Deve |';
+    }
+    81%{
+        content:'Devel |';
+    }
+    82.4%{
+        content:'Develo |';
+    }
+    83.8%{
+        content:'Develop |';
+    }
+    85.2%{
+        content: 'Develope |';
+    }
+    86.6%{
+        content: 'Developer |';
+    }
+    88%{
+        content: 'Develope |';
+    }
+    89.4%{
+        content: 'Develop |';
+    }
+    90.8%{
+        content: 'Develo |';
+    }
+    92.2%{
+        content: 'Devel |';
+    }
+    93.6%{
+        content: 'Deve |';
+    }
+    95%{
+        content: 'Dev |';
+    }
+    98%{
+        content:'De |';
+    }
+    100%{
+        content:'D |';
+    }
+}
+/* about */
+#about .row1{
+    width: 95%;
+    margin: auto;
+}
+.about-content h3,#contact h5{
+    position: relative;
+    padding-bottom: 20px;
+}
+.about-content h3::before,#contact h5::before{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background-color: #1d66d4;
+}
+.box-shadow-full {
+    background-color: #fff;   
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.about-content p,#services p,.blog-info p,#contact p{
+    color:#4e4e4e;
+    line-height: 30px;
+}
+/* services */
+.services-icon{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: auto;
+    border: 8px solid #0078ff;
+    transition: .5s;
+}
+.services-content:hover .services-icon
+{
+    background-color: #0078ff;
+    border: 8px solid hsl(212, 88%, 77%);
+
+}
+.services-content:hover .services-icon i{
+    color:white;
+    
+}
+.services-content{
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* work section */
+#work{
+    background-image: url(../images/counters-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding-block: 8rem;
+     
+}
+.work-icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 10px solid rgb(230, 230, 230);
+    margin: auto;
+}
+#work .overlay{
+    background-color: rgba(2, 131, 252,.7);
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+.port-item{
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.port-item img{
+    transition: transform 1s;
+}
+.port-item:hover img{
+    transform: scale(1.2);
+}
+.work-item{
+    position: relative;
+}
+/* slider */
+.slider{
+    min-height: 100vh;
+    background-image: url(../images/overlay-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.slider .overlay{
+    background-color: rgba(2, 131, 252,.7); 
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+}
+.slid-info p{
+    line-height: 30px;
+}
+.carousel-indicators [data-bs-target]{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    text-indent: 0;
+}
+.carousel-indicators{
+     bottom:90px;
+     margin-left: 100px;
+}
+/* blog */
+.blog-body{
+    position: relative;
+}
+ 
+.blog-p1{
+    width: 80px;
+    height: 30px;
+    background-color: #0078ff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top:-5%;
+    transform: translate(-50%);
+    z-index: 2;
+}
+.blog-data img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.blog-p{
+    width: 120px;
+    height: 30px;
+    background-color: #0078ff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 18px;
+    position: absolute;
+    left: 50%;
+    top:-5%;
+    transform: translate(-50%);
+    z-index: 2;}
+.blog-info h3{
+    transition: 1s;
+    cursor: pointer;
+}
+.blog-info h3:hover{
+    color: #0078ff;
+}
+/* contact */
+#contact{
+    background-image: url(../images/overlay-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    padding: 2rem; 
+    
+}
+ #contact .overlay{
+    background-color: rgba(3, 131, 252, 0.7); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; 
+    bottom: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2); 
+}
+#contact .container{
+    position: relative;
+       
+}
+.icon1{
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: auto;
+    border: 8px solid #0078ff;
+    transition: .5s;
+    cursor: pointer;
+}
+ 
+.icon1:hover{    
+    background-color: #0078ff;
+    border: 8px solid hsl(212, 88%, 77%);
+
+}
+.icon1:hover i{
+    color:white;   
+}
+#contact .container{
+    max-width: 960px;
+    background-color: white;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+/* footer */
+.footer{
+    background-color: #0062d3; 
+}
